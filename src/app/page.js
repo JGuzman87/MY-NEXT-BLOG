@@ -1,10 +1,16 @@
 import '../app/globals.css'
-import Blog from '../components/Blog';
+import Form from '../components/Form';
+import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
-    <div className="comp-container">
-      <Blog />
-    </div>
+    <>
+      <Nav />
+      <div className="comp-container">
+        <Form />
+      </div>
+      <Footer />
+    </>
   );
 }
