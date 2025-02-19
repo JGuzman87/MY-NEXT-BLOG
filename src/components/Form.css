@@ -32,7 +32,7 @@ input, textarea {
 
 textarea  {
 
-  min-height: 120px; /* Ensure it stays visible */
+  min-height: 120px; 
   resize: vertical;
   margin-top: auto;
 ;
