@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(197, 239, 225);
+  width: 50%;
+  height:50%;
+  gap: 10px;
+  padding: 10px;
+  margin-top: auto;
+  font-family: fantasy;
+  box-shadow:5px 5px 10px darkslategray;
+}
+
+input  {
+  margin-top: auto;
+ 
+}
+
+textarea  {
+
+  min-width: 250px; /* Prevent it from disappearing */
+  min-height: 100px; /* Ensure it stays visible */
+  resize: vertical;
+  margin-top: auto;
+;
+  
+}

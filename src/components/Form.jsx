@@ -1,6 +1,7 @@
 "use client"; 
+import "./Form.css"
 import { useState } from "react";
-import "../app/globals.css";
+import "./Nav.css";
 
 const Form = () => {
   const [userName, setUserName] = useState("");
@@ -35,7 +36,7 @@ const Form = () => {
   };
 
   return (
-    <form className="input-container">
+    <form className="form-container">
       <label
         htmlFor="username"
         className="block text-sm/6 font-medium text-gray-900"
