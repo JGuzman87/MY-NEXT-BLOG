@@ -6,27 +6,56 @@
 .form-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: rgb(197, 239, 225);
-  width: 50%;
-  height:50%;
+  width: 90%;
+  max-width: 500px;
+  min-width: 300px;
   gap: 10px;
-  padding: 10px;
+  padding: 20px;
   margin-top: auto;
   font-family: fantasy;
   box-shadow:5px 5px 10px darkslategray;
+  border-radius: 8px;
 }
 
-input  {
+input, textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px;
+   border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
   margin-top: auto;
  
 }
 
 textarea  {
 
-  min-width: 250px; /* Prevent it from disappearing */
-  min-height: 100px; /* Ensure it stays visible */
+  min-height: 120px; /* Ensure it stays visible */
   resize: vertical;
   margin-top: auto;
 ;
   
+}
+
+.submit {
+  width: 100%; 
+  max-width: 400px;
+  padding: 10px;
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+
+/* Responsive Design */
+@media (max-width: 400px) {
+  .form-container {
+    width: 95%;
+    min-width: 250px;
+  }
 }
