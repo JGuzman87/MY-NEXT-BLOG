@@ -1,5 +1,5 @@
-"use client"; 
-import "./Form.css"
+"use client";
+import "./Form.css";
 import { useState } from "react";
 import "./Nav.css";
 
@@ -7,30 +7,35 @@ const Form = () => {
   const [userName, setUserName] = useState("");
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [error, setError] = useState('');
 
   const handleInputChange = (e) => {
     const { target } = e;
     const inputName = target.name;
-    const inputValue = target.value
-    if(inputName === "userName"){
+    const inputValue = target.value;
+    if (inputName === "userName") {
       setUserName(inputValue);
-    } else if(inputName === "title") {
+    } else if (inputName === "title") {
       setTitle(inputValue);
     } else if (inputName === "content") {
       setContent(inputValue);
     }
-      
-    
-    
+
     console.log(inputName);
   };
-  
-  
+
   const handleClick = (e) => {
-
     e.preventDefault();
+    if (userName === "") {
+      return setError('Pleaase enter a Username');
+      
+    } else if (title === "") {
+      return setError("Pleaase enter a Title");
+    } else if (content === "") {
+      return setError("Pleaase add Content");
+    }
 
-    setUserName('');
+    setUserName("");
     setTitle("");
     setContent("");
   };
@@ -57,7 +62,14 @@ const Form = () => {
       >
         Title:
       </label>
-      <input value={title} className="title" name="title" type="text" onChange={handleInputChange} placeholder="Title" />
+      <input
+        value={title}
+        className="title"
+        name="title"
+        type="text"
+        onChange={handleInputChange}
+        placeholder="Title"
+      />
       <label
         htmlFor="content"
         className="block text-sm/6 font-medium text-gray-900"
@@ -72,7 +84,10 @@ const Form = () => {
         onChange={handleInputChange}
         placeholder="Content"
       ></textarea>
-      <button className="submit" onClick={handleClick} >Submit</button>
+      <p className="error">{error}</p>
+      <button className="submit" onClick={handleClick}>
+        Submit
+      </button>
     </form>
   );
 };
