@@ -1,13 +1,13 @@
 "use client";
 import "./Form.css";
-import { useState } from "react";
-import "./Nav.css";
+import { useState, useEffect } from "react";
+
 
 const Form = () => {
   const [userName, setUserName] = useState("");
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const handleInputChange = (e) => {
     const { target } = e;
@@ -21,19 +21,19 @@ const Form = () => {
       setContent(inputValue);
     }
 
-    console.log(inputName);
   };
 
   const handleClick = (e) => {
     e.preventDefault();
+
     if (userName === "") {
-      return setError('Pleaase enter a Username'); 
+      return setError("Pleaase enter a Username");
     } else if (title === "") {
       return setError("Pleaase enter a Title");
     } else if (content === "") {
       return setError("Pleaase add Content");
-    }else {
-      setError('')
+    } else {
+      setError("");
     }
 
     setUserName("");

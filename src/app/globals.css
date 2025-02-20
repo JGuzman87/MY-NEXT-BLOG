@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-html body {
+ body {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -16,14 +14,3 @@ html body {
 
 
 
-.submit {
-  background-color: azure;
-  padding: 5px;
-  background-color: rgb(170, 226, 226);
-  margin-top: auto;
-}
-
-.toggle {
-  font-size: 30px;
-  
-}
