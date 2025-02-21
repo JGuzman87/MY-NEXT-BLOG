@@ -1,9 +1,12 @@
 "use client";
 import "./Form.css";
 import { useState, useEffect } from "react";
+import {useRouter} from 'next/navigation';
 
 
 const Form = () => {
+
+  const router = useRouter();
   const [userName, setUserName] = useState("");
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -31,7 +34,7 @@ const Form = () => {
     } else if (title === "") {
       return setError("Pleaase enter a Title");
     } else if (content === "") {
-      return setError("Pleaase add Content");
+      return setError("Please add Content");
     } else {
       setError("");
     }
@@ -39,6 +42,8 @@ const Form = () => {
     setUserName("");
     setTitle("");
     setContent("");
+    router.push('/blog')
+    
   };
 
   return (
