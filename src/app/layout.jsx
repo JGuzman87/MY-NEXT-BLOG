@@ -1,3 +1,6 @@
+import ThemeProvider from '@/components/ThemeProvider';
+
+
 import Nav from '../components/Nav';
 import Footer from '../components/Footer'
 import { Geist, Geist_Mono } from "next/font/google";
@@ -24,9 +27,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Nav />
-        {children}
-        <Footer />
+        <ThemeProvider attibute="class">
+          <Nav />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

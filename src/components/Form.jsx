@@ -50,7 +50,7 @@ const Form = () => {
     <form className="form-container">
       <label
         htmlFor="username"
-        className="block text-sm/6 font-medium text-gray-900"
+        className="block text-sm/6 font-medium"
       >
         Username:
       </label>
@@ -64,7 +64,7 @@ const Form = () => {
       />
       <label
         htmlFor="title"
-        className="block text-sm/6 font-large text-gray-900"
+        className="block text-sm/6 font-large"
       >
         Title:
       </label>
@@ -78,7 +78,7 @@ const Form = () => {
       />
       <label
         htmlFor="content"
-        className="block text-sm/6 font-medium text-gray-900"
+        className="block text-sm/6 font-medium"
       >
         Content:
       </label>

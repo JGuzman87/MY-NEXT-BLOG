@@ -1,13 +1,21 @@
 "use client"
 import './Nav.css'
-import {useState} from 'react';
+import { useTheme } from 'next-themes';
+import {useState, useEffect } from 'react';
 import {useRouter} from 'next/navigation';
 const Nav = () => {
   const router = useRouter();
-  const [toggle, setToggle] = useState('white');
+  const {theme, setTheme, systemTheme} = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   const handleToggle = () => {
-    router.push('/')
+    setTheme(theme === 'dark' ? 'light' : 'dark');
 
     console.log('handlerworks')
   }
