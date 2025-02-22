@@ -5,7 +5,7 @@ import {useState, useEffect } from 'react';
 import {useRouter} from 'next/navigation';
 const Nav = () => {
   const router = useRouter();
-  const {theme, setTheme, systemTheme} = useTheme();
+  const {theme, setTheme} = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -21,12 +21,12 @@ const Nav = () => {
   }
   
   return (
-<nav className="nav-bar">
-    <h1>My Next Blog</h1>
-    <button className="toggle" onClick={handleToggle} >🌓</button>
-   
-</nav>
-
+    <nav className="nav-bar">
+      <h1>My Next Blog</h1>
+      <button className="toggle" onClick={handleToggle}>
+        {theme === "dark" ? "🌞" : "🌙 "}
+      </button>
+    </nav>
   );
 };
 
