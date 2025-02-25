@@ -1,0 +1,6 @@
+.blog-post {
+    display: flex;
+    flex-direction:column;
+    align-content: center;
+    background-color: aquamarine;
+}

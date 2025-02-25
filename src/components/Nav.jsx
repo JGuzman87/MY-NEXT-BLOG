@@ -17,7 +17,7 @@ const Nav = () => {
   const handleToggle = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
 
-    console.log('handlerworks')
+    
   }
   
   return (
