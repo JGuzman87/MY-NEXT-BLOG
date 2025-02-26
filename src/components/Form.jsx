@@ -7,41 +7,32 @@ import {useRouter} from 'next/navigation';
 const Form = () => {
 
   const router = useRouter();
-  const [userName, setUserName] = useState("");
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [formData, setFormData] = useState({userName: '', title: '', content: ''})
   const [error, setError] = useState("");
 
   const handleInputChange = (e) => {
     const { target } = e;
     const inputName = target.name;
     const inputValue = target.value;
-    if (inputName === "userName") {
-      setUserName(inputValue);
-    } else if (inputName === "title") {
-      setTitle(inputValue);
-    } else if (inputName === "content") {
-      setContent(inputValue);
-    }
+   setFormData({...formData, [inputName]: inputValue})
 
   };
 
   const handleClick = (e) => {
     e.preventDefault();
 
-    if (userName === "") {
+    if (formData.userName === "") {
       return setError("Pleaase enter a Username");
-    } else if (title === "") {
+    } else if (formData.title === "") {
       return setError("Pleaase enter a Title");
-    } else if (content === "") {
+    } else if (formData.content === "") {
       return setError("Please add Content");
     } else {
       setError("");
     }
+    localStorage.setItem('PostData', JSON.stringify(formData));
 
-    setUserName("");
-    setTitle("");
-    setContent("");
+    setFormData({userName: '', title: '', content: ''})
     router.push('/blog')
     
   };
@@ -55,7 +46,7 @@ const Form = () => {
         Username:
       </label>
       <input
-        value={userName}
+        value={formData.userName}
         className="user-name"
         name="userName"
         type="text"
@@ -69,7 +60,7 @@ const Form = () => {
         Title:
       </label>
       <input
-        value={title}
+        value={formData.title}
         className="title"
         name="title"
         type="text"
@@ -83,7 +74,7 @@ const Form = () => {
         Content:
       </label>
       <textarea
-        value={content}
+        value={formData.content}
         className="content"
         name="content"
         type="textarea"

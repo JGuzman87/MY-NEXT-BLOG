@@ -1,14 +1,16 @@
 "use client";
 import Post from '../../components/Post';
 
+import {useRouter, usePathname } from 'next/navigation';
 
 export default function Blog() {
+
+  const pathname = usePathname();
 return (
   <div>
-    <Post
-      title="this is the title"
-      name="this is the name"
-      content="content goes here as well"
+
+  <Post
+     
     />
   </div>
 );
