@@ -3,6 +3,7 @@ import ThemeProvider from '@/components/ThemeProvider';
 
 import Nav from '../components/Nav';
 import Footer from '../components/Footer'
+import Post from '../components/Post'
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 

@@ -17,12 +17,12 @@ const Post = () => {
     }, [])
 
     if (!formData) {
-            <p>No form Data available</p>
+           return <p>No form Data available</p>
     }
   console.log(postData.userName)
 return (
-  <div className="blog-post">
-    <p>{postData.title}</p>
+  <div className='blog-post'>
+    <h1>{postData.title}</h1>
     <p>{postData.userName}</p>
     <p>{postData.content}</p>
     <></>

@@ -1,6 +1,11 @@
 .blog-post {
-    display: flex;
-    flex-direction:column;
-    align-content: center;
-    background-color: aquamarine;
+    font-weight: bold;
+    height: 50%;
+    width: 100%;
+    font-family: fantasy;
+}
+
+
+.blog-post h1 {
+border: 3px solid white;
 }
