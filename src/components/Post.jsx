@@ -22,9 +22,9 @@ const Post = () => {
   console.log(postData.userName)
 return (
   <div className='blog-post'>
-    <h1>{postData.title}</h1>
-    <p>{postData.userName}</p>
-    <p>{postData.content}</p>
+    <h1 id='title'>{postData.title}</h1>
+    <p id='username'>{postData.userName}:</p>
+    <p id='content'>{postData.content}</p>
     <></>
   </div>
 );

@@ -1,11 +1,16 @@
 .blog-post {
-    font-weight: bold;
+    
     height: 50%;
     width: 100%;
     font-family: fantasy;
 }
 
 
-.blog-post h1 {
-border: 3px solid white;
+#title {
+font-weight: bold;
+
+}
+
+#content {
+    
 }

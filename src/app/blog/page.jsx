@@ -10,6 +10,7 @@ const blogStyle = {
   justifyContent: "flex-start",
   marginTop: "3%",
   padding: "10px",
+  backgroundColor: 'teal',
   boxShadow: "5px 5px 10px darkslategray",
 };
 
