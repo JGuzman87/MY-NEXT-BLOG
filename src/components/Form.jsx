@@ -30,6 +30,8 @@ const Form = () => {
     } else {
       setError("");
     }
+
+   
     localStorage.setItem('PostData', JSON.stringify(formData));
 
     setFormData({userName: '', title: '', content: ''})

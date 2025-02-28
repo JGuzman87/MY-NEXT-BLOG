@@ -4,28 +4,32 @@ import './Post.css'
 
 const Post = () => {
 
-    const [postData, setPostData] = useState('');
-    // const [post, setPost] = useState({name: '', title: '', content: ''})
-    const formData = JSON.parse(localStorage.getItem('PostData'));
+    const [postData, setPostData] = useState([]);
+  
 
     useEffect(() => {
-          if (formData) {
-            setPostData(formData);
-          }
-          
+          const storedPosts = JSON.parse(localStorage.getItem("PostData"));
+      setPostData(storedPosts);
+           if (!storedPosts) {
+             return <p>No form Data available</p>;
+           }
 
     }, [])
 
-    if (!formData) {
-           return <p>No form Data available</p>
-    }
-  console.log(postData.userName)
+  
+
+  const handleClick = () => {
+    localStorage.removeItem('PostData')
+   setPostData('')
+  }
+
+  
 return (
   <div className='blog-post'>
     <h1 id='title'>{postData.title}</h1>
     <p id='username'>{postData.userName}:</p>
     <p id='content'>{postData.content}</p>
-    <></>
+    <button className='delete'onClick={handleClick}>Delete</button>
   </div>
 );
 }

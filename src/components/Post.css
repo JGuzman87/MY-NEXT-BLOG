@@ -1,5 +1,4 @@
 .blog-post {
-    
     height: 50%;
     width: 100%;
     font-family: fantasy;
@@ -13,4 +12,15 @@ font-weight: bold;
 
 #content {
     
+}
+
+.delete {
+ display: flex;
+justify-self: flex-end;
+justify-content: center;
+width: 10%;;
+  background-color: #c1164f;
+  font-weight: bold;
+  color: white;
+  border-radius: 10px;
 }
